@@ -9,6 +9,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import org.taboola.ExpressionCalculator;
 import org.taboola.ExpressionValidator;
 import org.taboola.exceptions.InvalidExpression;
+import org.taboola.exceptions.UndefinedVariableException;
 
 import java.util.List;
 import java.util.Map;
@@ -49,6 +50,20 @@ public class ExpressionCalculatorTest {
     })
     void shouldRaiseInvalidExpression(String expression) {
         assertThrows(InvalidExpression.class, () -> {
+            calculator.calculate(expression);
+        }, "Expected an exception for expression: " + expression);
+    }
+
+
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "x++",
+            "x += 5",
+            "++x",
+            "x = 5 + y"
+    })
+    void shouldRaiseUndefinedExpression(String expression) {
+        assertThrows(UndefinedVariableException.class, () -> {
             calculator.calculate(expression);
         }, "Expected an exception for expression: " + expression);
     }
