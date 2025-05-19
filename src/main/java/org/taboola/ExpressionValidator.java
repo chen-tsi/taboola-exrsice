@@ -1,8 +1,6 @@
 package org.taboola;
 
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.taboola.enums.Operator;
 
@@ -13,7 +11,7 @@ import java.util.Scanner;
  * This includes checks for:
  * - Valid characters
  * - Balanced parentheses
- *  - assigment expression
+ * - assignment expression
  * - Proper structure of operands and operators
  */
 @Slf4j
@@ -190,9 +188,7 @@ public class ExpressionValidator {
             String secondToken = scanner.next();
             Operator operator = Operator.fromValue(secondToken);
 
-            boolean is =  Operator.ASSIGN.equals(operator) || Operator.ADD_ASSIGN.equals(operator);
-
-            return is;
+            return Operator.ASSIGN.equals(operator) || Operator.ADD_ASSIGN.equals(operator);
         }
 
         return false;

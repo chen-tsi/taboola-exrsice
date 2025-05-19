@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 
 /**
  * Calculator class that parses, validates, and evaluates numeric expressions.
- * <p>
+ *
  * Supports variables, assignments, pre/post increments, and basic arithmetic operators.
  * Maintains a map of variable names to their current integer values.
  */
@@ -51,7 +51,7 @@ public class ExpressionCalculator {
 
     /**
      * Calculates the result of the given numeric expression string.
-     * <p>
+     *
      * This method validates the expression, parses it into an evaluable structure,
      * and then computes the result.
      *
@@ -149,7 +149,7 @@ public class ExpressionCalculator {
 
     /**
      * Returns an {@link Evaluable} representing the next token from the scanner.
-     * <p>
+     *
      * Recognizes numbers, variables, pre/post increment expressions, and parentheses.
      *
      * @param scanner the scanner that provides tokens of the expression

@@ -15,10 +15,10 @@ import java.io.InputStreamReader;
 
 /**
  * Entry point for the Expression Calculator application.
- * <p>
+ *
  * This is a Spring Boot application that accepts numeric expressions from standard input,
  * evaluates them, and displays results or errors.
- * <p>
+ *
  * Supports variable assignments, arithmetic operations, and both pre/post increments.
  */
 @Slf4j
@@ -69,10 +69,10 @@ public class ExpressionCalculatorApplication implements CommandLineRunner {
         BufferedReader buffer = new BufferedReader(new InputStreamReader(System.in));
         log.info("Welcome to the Numeric Expression Calculator!\n" +
                 "--------------------------------------------------\n" +
-                "[✓] Supported operations: +, -, *, =, +=, ++ (prefix and postfix)\n" +
+                "[✓] Supported operations: +, -, *, =, +=, ++ (pre/post increments))\n" +
                 "[✓] Enter numeric expressions using valid syntax and supported operations.\n" +
-                "[✓] Separate all operands and operators with a **single whitespace**.\n" +
-                "[✓] To finish entering expressions and view the final result, press **Enter** on an empty line.\n" +
+                "[✓] Separate all operands and operators with a single whitespace.\n" +
+                "[✓] To finish entering expressions and view the final result, press Enter on an empty line.\n" +
                 "--------------------------------------------------");
 
         while (true) {
